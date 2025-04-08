@@ -4,3 +4,5 @@
 /**/*.pem-chain
 /**/*.ca.pem
 /**/.DS_Store
+ls packages/bookcars-types
+# should show package.json
