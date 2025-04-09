@@ -32,18 +32,18 @@ import {
  * @type {{}}
  */
 export const LANGUAGES = [
-  {
-    code: 'fr',
-    label: 'Français',
-  },
+  // {
+  //   code: 'fr',
+  //   label: 'Français',
+  // },
   {
     code: 'en',
-    label: 'English',
+    label: 'In',
   },
-  {
-    code: 'es',
-    label: 'Español',
-  },
+  // {
+  //   code: 'es',
+  //   label: 'Español',
+  // },
 ]
 
 type Currency = { code: string, symbol: string }

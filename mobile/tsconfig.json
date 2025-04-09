@@ -1,17 +1,18 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "jsx": "react",
     "module": "ESNext",
     "strict": true,
     "typeRoots": [
       "./types"
     ],
     "rootDir": "./",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       ":bookcars-types": ["../packages/bookcars-types"],
-      ":bookcars-helper": ["../packages/bookcars-helper"]
+      ":bookcars-helper": ["../packages/bookcars-helper"],
     }
   },
   "references": [

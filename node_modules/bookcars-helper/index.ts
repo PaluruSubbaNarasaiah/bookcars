@@ -613,3 +613,7 @@ export const truncateString = (str: string, maxLength: number) => {
 
   return str.slice(0, maxLength)
 }
+export function isFrench(language: string) {
+  throw new Error('Function not implemented.')
+}
+

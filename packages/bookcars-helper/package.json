@@ -3,18 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "devDependencies": {},
   "scripts": {
-    "build": "rimraf ./tsconfig.tsbuildinfo ./index.js ./index.d.ts && tsc --build --verbose"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Akram El Assas",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "rimraf": "^5.0.5",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.26.0",
-    "bookcars-helper": "file:"
-  }
+  "type": "commonjs",
+  "types": "./index.d.ts"
 }

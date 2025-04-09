@@ -30,7 +30,6 @@ import * as env from '@/config/env.config'
 import Backdrop from '@/components/Backdrop'
 import Indicator from '@/components/Indicator'
 import DriverLicense from '@/components/DriverLicense'
-import { en } from '@/lang/en'
 
 const CheckoutScreen = ({ navigation, route }: NativeStackScreenProps<StackParams, 'Checkout'>) => {
   const isFocused = useIsFocused()
@@ -123,7 +122,7 @@ const CheckoutScreen = ({ navigation, route }: NativeStackScreenProps<StackParam
       const _language = await UserService.getLanguage()
       i18n.locale = _language
       setLanguage(_language)
-      setLoacle(_language === 'en' ? en : enUS)
+      setLoacle(_language === 'fr' ? fr : enUS)
 
       setAuthenticated(false)
       setUser(null)
@@ -660,7 +659,7 @@ const CheckoutScreen = ({ navigation, route }: NativeStackScreenProps<StackParam
       try {
         if (!payLater) {
           const name = bookcarsHelper.truncateString(`${env.WEBSITE_NAME} - ${car.name}`, StripeService.ORDER_NAME_MAX_LENGTH)
-          const _locale = _fr ? fr : enUS
+          const _locale = fr ? fr : enUS
           const daysLabel = from && to && `${helper.getDaysShort(days)} (${bookcarsHelper.capitalize(format(from, _format, { locale: _locale }))} - ${bookcarsHelper.capitalize(format(to, _format, { locale: _locale }))})`
           const _description = `${env.WEBSITE_NAME} - ${car.name} - ${daysLabel} - ${pickupLocation._id === dropOffLocation._id ? pickupLocation.name : `${pickupLocation.name} - ${dropOffLocation.name}`}`
           const description = bookcarsHelper.truncateString(_description, StripeService.ORDER_DESCRIPTION_MAX_LENGTH)
@@ -786,8 +785,8 @@ const CheckoutScreen = ({ navigation, route }: NativeStackScreenProps<StackParam
 
   const iconSize = 18
   const iconColor = '#000'
-  const _en = bookcarsHelper.isEnglish(language)
-  const _format = _en ? 'eee d LLL yyyy kk:mm' : 'eee, d LLL yyyy, p'
+  const _fr = bookcarsHelper.isFrench(language)
+  const _format = fr ? 'eee d LLL yyyy kk:mm' : 'eee, d LLL yyyy, p'
   const days = bookcarsHelper.days(from, to)
 
   return (

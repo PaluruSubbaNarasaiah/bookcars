@@ -32,7 +32,7 @@ export const createPaymentIntent = (payload: bookcarsTypes.CreatePaymentPayload)
       '/api/create-payment-intent',
       payload
     )
-    .then((res) => res.data)
+    .then((res: { data: any }) => res.data)
 
 /**
 * Set currency.
@@ -66,7 +66,7 @@ export const getCurrency = async () => {
  */
 export const getCurrencySymbol = async () => {
   const currency = await getCurrency()
-  const currencySymbol = env.CURRENCIES.find((c) => c.code === currency)?.symbol || '₹'
+  const currencySymbol = env.CURRENCIES.find((c: { code: any }) => c.code === currency)?.symbol || '₹'
   return currencySymbol
 }
 
