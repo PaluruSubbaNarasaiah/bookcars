@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "type": "module",
   "types": "index.ts",
   "scripts": {
     "build": "tsc"
@@ -11,9 +10,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bookcars-types": "file:",
+  "devDependencies": {
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "bookcars-types": "file:"
   }
 }

@@ -8,7 +8,7 @@
     "install:reactjs-social-login": "cd ../packages/reactjs-social-login && npm i && cd ../../frontend",
     "install:dependencies": "npm run install:currency-converter && npm run install:reactjs-social-login",
     "ts:build": "tsc --build --verbose",
-    "build": "npm run build -w packages/bookcars-types && npm run build -w packages/currency-converter && npm run build -w packages/bookcars-helper && npm run build -w frontend",
+    "build": "npm run build --workspace=bookcars-types && vite build",
     "dev": "npm run ts:build && vite",
     "preview": "vite preview",
     "fix": "eslint --fix .",
