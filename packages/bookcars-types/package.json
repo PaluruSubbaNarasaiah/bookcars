@@ -2,10 +2,11 @@
   "name": "bookcars-types",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
+  "types": "index.ts",
   "scripts": {
-    "build": "rimraf ./tsconfig.tsbuildinfo ./index.js ./index.d.ts && tsc --build --verbose"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

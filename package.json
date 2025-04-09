@@ -1,11 +1,12 @@
 {
   "name": "bookcars",
   "version": "1.0.0",
-  "description": "[![build](https://github.com/aelassas/bookcars/actions/workflows/build.yml/badge.svg)](https://github.com/aelassas/bookcars/actions/workflows/build.yml) [![test](https://github.com/aelassas/bookcars/actions/workflows/test.yml/badge.svg)](https://github.com/aelassas/bookcars/actions/workflows/test.yml) [![coveralls](https://coveralls.io/repos/github/aelassas/bookcars/badge.svg?branch=main)](https://coveralls.io/github/aelassas/bookcars?branch=main) [![loc](https://raw.githubusercontent.com/aelassas/bookcars/refs/heads/loc/badge.svg)](https://github.com/aelassas/bookcars/actions/workflows/loc.yml) [![docs](https://img.shields.io/badge/docs-wiki-brightgreen)](https://github.com/aelassas/bookcars/wiki) [![live demo](https://img.shields.io/badge/live-demo-brightgreen)](https://bookcars.dynv6.net:3002/)",
+  "description": "...",
   "main": "index.js",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "frontend"
   ],
   "dependencies": {
     "ansi-regex": "^6.1.0",
@@ -80,7 +81,6 @@
     "react-is": "^18.3.1",
     "reactjs-social-login": "^1.0.0",
     "regenerator-runtime": "^0.14.1",
-    "rimraf": "^6.0.1",
     "shebang-command": "^2.0.0",
     "shebang-regex": "^3.0.0",
     "signal-exit": "^4.1.0",
@@ -99,7 +99,10 @@
     "wrap-ansi-cjs": "^7.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build -w packages/bookcars-types && npm run build -w packages/currency-converter && npm run build -w packages/bookcars-helper && npm run build -w frontend",
+    "build-types": "npm run build --workspace=packages/bookcars-types",
+    "build:frontend": "cd frontend && npm run build"
   },
   "repository": {
     "type": "git",
@@ -112,5 +115,8 @@
   "bugs": {
     "url": "https://github.com/PaluruSubbaNarasaiah/bookcars/issues"
   },
-  "homepage": "https://github.com/PaluruSubbaNarasaiah/bookcars#readme"
+  "homepage": "https://github.com/PaluruSubbaNarasaiah/bookcars#readme",
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
 }

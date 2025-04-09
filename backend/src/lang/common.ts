@@ -272,9 +272,9 @@
 // langHelper.setLanguage(strings)
 // export { strings }
 
-import LocalizedStrings from 'localized-strings';
-import env from '@/config/env.config';
-import * as langHelper from '@/common/langHelper';
+import LocalizedStrings from 'localized-strings'
+import env from '@/config/env.config'
+import * as langHelper from '@/common/langHelper'
 
 const strings = new LocalizedStrings({
   en: {
@@ -365,7 +365,7 @@ const strings = new LocalizedStrings({
     SUPPLIER_CAR_LIMIT: 'Max Allowed Cars in Search',
     NOTIFY_ADMIN_ON_NEW_CAR: 'Notify Admin on New Car',
   },
-});
+})
 
-langHelper.setLanguage(strings);
-export { strings };
+langHelper.setLanguage(strings)
+export { strings }
