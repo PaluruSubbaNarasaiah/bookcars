@@ -5,7 +5,7 @@ import {
   LoginSocialFacebook,
   LoginSocialApple,
   LoginSocialGoogle,
-} from ':reactjs-social-login'
+} from 'reactjs-social-login/dist/src'
 import * as bookcarsTypes from ':bookcars-types'
 import { strings as commonStrings } from '@/lang/common'
 import env from '@/config/env.config'
