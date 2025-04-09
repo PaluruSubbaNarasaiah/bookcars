@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  IResolveParams,
+  LoginSocialGoogle,
   LoginSocialFacebook,
   LoginSocialApple,
-  LoginSocialGoogle,
-} from 'reactjs-social-login/dist/src'
+  IResolveParams,
+} from ':reactjs-social-login'
 import * as bookcarsTypes from ':bookcars-types'
 import { strings as commonStrings } from '@/lang/common'
 import env from '@/config/env.config'

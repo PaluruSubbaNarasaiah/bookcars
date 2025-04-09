@@ -10,13 +10,13 @@ export default ({ mode }: { mode: string }) => {
   return defineConfig({
     plugins: [
       react({
-        // Babel optimizations
         babel: {
           plugins: [
             ['@babel/plugin-transform-runtime'],
+            // You can re-enable this if needed
             // ['babel-plugin-react-compiler', { optimize: true }],
-          ]
-        }
+          ],
+        },
       }),
       createHtmlPlugin({
         inject: {
@@ -34,7 +34,7 @@ export default ({ mode }: { mode: string }) => {
         ':bookcars-helper': path.resolve(__dirname, '../packages/bookcars-helper'),
         ':disable-react-devtools': path.resolve(__dirname, '../packages/disable-react-devtools'),
         ':currency-converter': path.resolve(__dirname, '../packages/currency-converter'),
-        ':reactjs-social-login': path.resolve(__dirname, '../packages/reactjs-social-login'),
+        ':reactjs-social-login': path.resolve(__dirname, '../packages/reactjs-social-login/dist/src'), // ✅ Correct import path
       },
     },
 
@@ -44,54 +44,47 @@ export default ({ mode }: { mode: string }) => {
     },
 
     build: {
-      outDir: 'build', // Output directory
-      target: 'esnext', // Use esnext to ensure the best performance
-      modulePreload: true, // Keep modulePreload enabled to ensure the best performance
-      sourcemap: false, // Disable sourcemaps in production
-      cssCodeSplit: true, // Enable CSS code splitting
-
-      // Minification settings (Use terser for minification with aggressive settings)
-      minify: 'terser', // Can also use 'esbuild' which is faster but less optimized
+      outDir: 'build',
+      target: 'esnext',
+      modulePreload: true,
+      sourcemap: false,
+      cssCodeSplit: true,
+      minify: 'terser',
       terserOptions: {
         compress: {
-          drop_console: false, // Keep console.* calls
-          drop_debugger: true, // Removes debugger statements
-          dead_code: true, // Removes unreachable code
-          passes: 3, // Number of compression passes
-          unsafe_math: true, // Optimize math expressions
-          conditionals: true, // Optimize if-s and conditional expressions
-          sequences: true, // Join consecutive simple statements using the comma operator
-          booleans: true, // various optimizations for boolean context
-          unused: true, // Drop unreferenced functions and variables
-          if_return: true, // Optimizations for if/return and if/continue
-          join_vars: true, // Join consecutive var statements
+          drop_console: false,
+          drop_debugger: true,
+          dead_code: true,
+          passes: 3,
+          unsafe_math: true,
+          conditionals: true,
+          sequences: true,
+          booleans: true,
+          unused: true,
+          if_return: true,
+          join_vars: true,
         },
         format: {
-          comments: false, // Remove comments
+          comments: false,
         },
         mangle: {
-          properties: false // Don't rename properties (safer)
-        }
+          properties: false,
+        },
       },
-
-      // Control chunk size
-      chunkSizeWarningLimit: 1000, // Warn if a chunk exceeds 1000kb
-
-      // Chunk splitting strategy
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
-        treeshake: true, // Enable Tree Shaking: Ensure unused code is removed by leveraging ES modules and proper imports
+        treeshake: true,
         output: {
           manualChunks: {
-            vendor: ['react', 'react-dom'], // Create a separate vendor chunk
-            router: ['react-router-dom'], // Create a separate router chunk
+            vendor: ['react', 'react-dom'],
+            router: ['react-router-dom'],
           },
-          // Generate chunk names
           assetFileNames: 'assets/[name]-[hash][extname]',
           chunkFileNames: 'chunks/[name]-[hash].js',
           entryFileNames: 'entries/[name]-[hash].js',
         },
       },
-      assetsInlineLimit: 8192, // This reduces the number of small chunk files
+      assetsInlineLimit: 8192,
     },
   })
 }
