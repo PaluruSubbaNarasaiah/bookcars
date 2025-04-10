@@ -17,3 +17,8 @@ npm-debug.log*
 
 # eslint
 /**/.eslintcache
+
+node_modules/
+dist/
+build/
+.env
