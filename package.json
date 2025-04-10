@@ -13,7 +13,7 @@
     "build": "npm run build --workspace=bookcars-types && npm run build --workspace=currency-converter && npm run build --workspace=bookcars-helper && npm run build --workspace=frontend",
     "build-types": "npm run build --workspace=bookcars-types",
     "build:frontend": "cd frontend && npm run build",
-    "postinstall": "chmod +x ./node_modules/.bin/tsc && npm run build --workspace=reactjs-social-login && npm install --workspace=reactjs-social-login",
+    "postinstall": "npm run build --workspace=reactjs-social-login && npm install --workspace=reactjs-social-login",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
